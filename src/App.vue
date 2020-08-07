@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class='container' >
+    <appQuoteGrid :quotes='quotes'></appQuoteGrid>
+   
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import quotegrid from './components/Quotegrid.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+    data:function(){
+      return {
+        max:10,
+        quotes: ['Just a quote to see something','Another Beautiful Quote More to Come']
+      }
+    },
+    components:{
+      appQuoteGrid:quotegrid
+    }
   }
-}
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
